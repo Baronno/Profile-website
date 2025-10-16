@@ -1,4 +1,5 @@
 import React from 'react'
+import content from '../content.json'
 
 const Header = () => {
   return (
@@ -6,29 +7,23 @@ const Header = () => {
       <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
         <div className="flex-shrink-0">
           <div className="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white text-4xl font-bold">
-            JD
+            {content.header.initials}
           </div>
         </div>
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">John Doe</h1>
-          <h2 className="text-xl text-primary-600 font-medium mb-4">Full Stack Developer</h2>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.header.name}</h1>
+          <h2 className="text-xl text-primary-600 font-medium mb-4">{content.header.title}</h2>
           <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-            Passionate developer with 5+ years of experience building scalable web applications. 
-            I love creating user-friendly interfaces and solving complex problems with clean, efficient code.
+            {content.header.bio}
           </p>
           <div className="flex flex-wrap gap-2 mt-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-              React
-            </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-              Node.js
-            </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-              TypeScript
-            </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-              AWS
-            </span>
+            {content.header.tags.map((tag, i) => (
+              <span key={i} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">{tag}</span>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
+            <a className="btn-primary" href="#contact">Get in touch</a>
+            <a className="btn-secondary" href="#projects">View projects</a>
           </div>
         </div>
       </div>

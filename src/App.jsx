@@ -3,7 +3,7 @@ import ProfilePage from './components/ProfilePage'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="tech-bg">
       <ProfilePage />
     </div>
   )
