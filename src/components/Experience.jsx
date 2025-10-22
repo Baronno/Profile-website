@@ -3,6 +3,10 @@ import content from '../content.json'
 
 const Experience = () => {
   const experiences = content.experience.timeline
+  const [projectsVisible, setProjectsVisible] = useState(false)
+  const [titleVisible, setTitleVisible] = useState(false)
+  const projectsRef = useRef(null)
+  const titleRef = useRef(null)
 
   // Fancy projects carousel
   const projects = useMemo(() => content.experience.projects, [])
@@ -25,6 +29,58 @@ const Experience = () => {
     }, 4000)
     return () => clearInterval(autoplayRef.current)
   }, [projects.length])
+
+  // Scroll reveal animation for title
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTitleVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    )
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current)
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current)
+      }
+    }
+  }, [])
+
+  // Scroll reveal animation for projects section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setProjectsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    )
+
+    if (projectsRef.current) {
+      observer.observe(projectsRef.current)
+    }
+
+    return () => {
+      if (projectsRef.current) {
+        observer.unobserve(projectsRef.current)
+      }
+    }
+  }, [])
 
   // Pause on hover for better UX
   const onMouseEnter = () => autoplayRef.current && clearInterval(autoplayRef.current)
@@ -66,19 +122,42 @@ const Experience = () => {
 
   return (
     <div className="card">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">{content.experience.title}</h3>
+      <h3 
+        ref={titleRef}
+        className={`text-2xl font-bold text-gray-900 mb-6 transition-all duration-700 ease-out ${
+          titleVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+        }`}
+      >
+        {content.experience.title}
+      </h3>
       <div className="space-y-6 sm:space-y-7 lg:space-y-8 mb-8 lg:mb-10">
         {experiences.map((exp, index) => (
           <ExperienceItem key={index} exp={exp} index={index} />
         ))}
       </div>
 
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">{content.experience.projectsTitle}</h3>
+      <h3 
+        ref={projectsRef}
+        className={`text-2xl font-bold text-gray-900 mb-4 transition-all duration-700 ease-out ${
+          projectsVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+        }`}
+      >
+        {content.experience.projectsTitle}
+      </h3>
       <div
         ref={containerRef}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className="relative overflow-hidden rounded-xl border border-gray-200 shadow-sm"
+        className={`relative overflow-hidden rounded-xl border border-gray-200 shadow-sm transition-all duration-700 ease-out ${
+          projectsVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+        }`}
+        style={{ transitionDelay: '200ms' }}
       >
         {/* Slides */}
         <div
@@ -154,13 +233,49 @@ const Experience = () => {
   )
 }
 
-// Collapsible experience item
+// Collapsible experience item with scroll reveal animation
 const ExperienceItem = ({ exp, index }) => {
   const [open, setOpen] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
   const contentRef = useRef(null)
+  const itemRef = useRef(null)
+
+  // Scroll reveal animation using Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    )
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current)
+    }
+
+    return () => {
+      if (itemRef.current) {
+        observer.unobserve(itemRef.current)
+      }
+    }
+  }, [])
 
   return (
-    <div className="border-l-4 border-primary-500 pl-6 relative">
+    <div 
+      ref={itemRef}
+      className={`border-l-4 border-primary-500 pl-6 relative transition-all duration-700 ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+      style={{ transitionDelay: `${index * 200}ms` }}
+    >
       <div className="absolute -left-2 top-0 w-4 h-4 bg-primary-500 rounded-full" />
 
       <button

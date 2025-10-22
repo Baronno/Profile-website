@@ -1,63 +1,70 @@
 {
   "header": {
-    "initials": "JD",
-    "name": "John Doe",
-    "title": "Full Stack Developer",
-    "bio": "Passionate developer with 5+ years of experience building scalable web applications. I love creating user-friendly interfaces and solving complex problems with clean, efficient code.",
-    "tags": ["React", "Node.js", "TypeScript", "AWS"]
+    "initials": "RZ",
+    "name": "Renhui Zhou",
+    "title": "UI/UX Developer",
+    "bio": "UI/UX developer with 3+ years of experience in React.js and Material UI, delivering modern, responsive, and user-focused web applications. Experienced in UI/UX design, component libraries, and agile team collaboration. Passionate about creating seamless user experiences and optimizing application performance.",
+    "tags": ["React", "JavaScript", "Material UI", "GraphQL"]
   },
   "about": {
     "title": "About Me",
     "paragraphs": [
-      "I'm a passionate full-stack developer with over 5 years of experience in building modern web applications. I specialize in React, Node.js, and cloud technologies, with a strong focus on creating scalable and maintainable solutions.",
-      "My journey in tech started with a Computer Science degree, and I've since worked with startups and enterprise companies, helping them build robust applications that serve thousands of users.",
-      "When I'm not coding, you can find me contributing to open-source projects, writing technical blogs, or exploring new technologies. I believe in continuous learning and staying up-to-date with the latest industry trends."
+      "I'm a UI/UX developer with 3+ years of experience specializing in React.js and Material UI. I'm passionate about creating modern, responsive, and user-focused web applications that deliver exceptional user experiences.",
+      "My journey in tech started with a Master's degree in Software System Engineering from UTS, and I've since worked with various companies, from startups to established businesses, helping them build robust applications and internal tools.",
+      "I have a strong background in both frontend development and UI/UX design, with experience in component libraries, agile development, and cross-functional team collaboration. I'm always eager to learn new technologies and optimize application performance."
     ]
   },
   "experience": {
     "title": "Work Experience",
     "timeline": [
       {
-        "title": "Senior Full Stack Developer",
-        "company": "TechCorp Inc.",
-        "period": "2022 - Present",
-        "description": "Leading development of microservices architecture and mentoring junior developers. Improved system performance by 40% and reduced deployment time by 60%.",
-        "technologies": ["React", "Node.js", "AWS", "Docker", "PostgreSQL"]
-      },
-      {
         "title": "Full Stack Developer",
-        "company": "StartupXYZ",
-        "period": "2020 - 2022",
-        "description": "Built and maintained multiple web applications serving 10,000+ users. Implemented CI/CD pipelines and automated testing processes.",
-        "technologies": ["Vue.js", "Python", "MongoDB", "Redis", "Kubernetes"]
+        "company": "Freelancer",
+        "period": "June 2024 - Present",
+        "description": "Investigated and resolved issues reported by users, ensuring minimal downtime and smooth system performance. Delivered enhancements and new features based on client requests, demonstrating strong communication and problem-solving skills. Maintenance of back-end including back-end migration.",
+        "technologies": ["React", "JavaScript", "Material UI", "GraphQL", "Webpack"]
       },
       {
         "title": "Frontend Developer",
-        "company": "WebSolutions Ltd.",
-        "period": "2019 - 2020",
-        "description": "Developed responsive web applications and collaborated with design teams to create pixel-perfect user interfaces.",
-        "technologies": ["React", "JavaScript", "CSS3", "SASS", "Webpack"]
+        "company": "Zerologix",
+        "period": "Aug 2021 - Nov 2023",
+        "description": "Developed internal trading administration systems by troubleshooting user issues, maintaining dashboards, and ensuring stable system performance. Collaborated with cross-functional teams to resolve technical problems, implement upgrades, and deliver secure, reliable solutions. Built and maintained internal tools and component libraries, reducing repetitive work and supporting colleagues with consistent resources.",
+        "technologies": ["React", "Material UI", "JavaScript", "GraphQL", "Figma"]
+      },
+      {
+        "title": "Full-stack Developer Intern",
+        "company": "Velocity English",
+        "period": "Feb 2021 - Aug 2021",
+        "description": "Assisted with troubleshooting and optimizing database queries, improving application performance and reducing errors. Participated in sprint planning and agile development to ensure timely delivery of features.",
+        "technologies": ["React", "JavaScript", "Database", "Agile", "Sprint Planning"]
+      },
+      {
+        "title": "IT Support Technician",
+        "company": "I Carry Network Café",
+        "period": "Jan 2021 - July 2021",
+        "description": "Installed and maintained PCs, software, and network hardware; provided user-friendly IT support. Gained practical troubleshooting experience for hardware/software issues, supporting user-facing systems. Delivered clear, customer-friendly technical support for login issues, software errors, and device problems.",
+        "technologies": ["Hardware", "Software", "Network", "Troubleshooting", "Customer Support"]
       }
     ],
     "projectsTitle": "Project Highlights",
     "projects": [
       {
-        "name": "ACY Securities",
-        "href": "https://acy.com.au/en/",
-        "image": "https://picsum.photos/seed/acy/1600/900",
-        "tagline": "Forex, CFDs and multi-asset trading platform"
-      },
-      {
         "name": "Linda Jewellers",
         "href": "https://lindajewellers.com/",
         "image": "https://picsum.photos/seed/jewellery/1600/900",
-        "tagline": "Luxury jewellery and timepieces"
+        "tagline": "Luxury jewellery and timepieces - Latest freelance project"
+      },
+      {
+        "name": "Trading Cup",
+        "href": "https://www.tradingcup.com/",
+        "image": "https://picsum.photos/seed/trading/1600/900",
+        "tagline": "Internal trading administration systems"
       },
       {
         "name": "Velocity English",
         "href": "https://www.velocityenglish.com.au/",
         "image": "https://picsum.photos/seed/english/1600/900",
-        "tagline": "PTE/IELTS training and language coaching"
+        "tagline": "PTE/IELTS training and language coaching platform"
       }
     ]
   },
@@ -68,30 +75,30 @@
         "title": "Frontend",
         "skills": [
           { "name": "React", "level": 95 },
-          { "name": "TypeScript", "level": 90 },
-          { "name": "Next.js", "level": 85 },
-          { "name": "Tailwind CSS", "level": 90 },
-          { "name": "Vue.js", "level": 75 }
+          { "name": "JavaScript", "level": 90 },
+          { "name": "Material UI", "level": 90 },
+          { "name": "Webpack", "level": 80 },
+          { "name": "Gatsby", "level": 75 }
         ]
       },
       {
-        "title": "Backend",
+        "title": "Backend & APIs",
         "skills": [
-          { "name": "Node.js", "level": 90 },
-          { "name": "Python", "level": 85 },
-          { "name": "PostgreSQL", "level": 80 },
-          { "name": "MongoDB", "level": 75 },
-          { "name": "GraphQL", "level": 70 }
+          { "name": "GraphQL", "level": 85 },
+          { "name": "RESTful APIs", "level": 90 },
+          { "name": "Database", "level": 80 },
+          { "name": "Backend Migration", "level": 75 },
+          { "name": "Agile Development", "level": 85 }
         ]
       },
       {
-        "title": "Tools & Others",
+        "title": "Tools & Design",
         "skills": [
-          { "name": "Git", "level": 95 },
-          { "name": "Docker", "level": 80 },
-          { "name": "AWS", "level": 75 },
-          { "name": "Figma", "level": 70 },
-          { "name": "Jest", "level": 85 }
+          { "name": "Git", "level": 90 },
+          { "name": "GitLab", "level": 85 },
+          { "name": "Figma", "level": 80 },
+          { "name": "UI/UX Design", "level": 85 },
+          { "name": "Component Libraries", "level": 90 }
         ]
       }
     ]
@@ -99,10 +106,9 @@
   "contact": {
     "title": "Contact",
     "items": [
-      { "icon": "email", "label": "Email", "value": "john.doe@email.com", "href": "mailto:john.doe@email.com" },
-      { "icon": "phone", "label": "Phone", "value": "+1 (555) 123-4567", "href": "tel:+15551234567" },
-      { "icon": "github", "label": "GitHub", "value": "github.com/johndoe", "href": "https://github.com/johndoe" },
-      { "icon": "linkedin", "label": "LinkedIn", "value": "linkedin.com/in/johndoe", "href": "https://linkedin.com/in/johndoe" }
+      { "icon": "email", "label": "Email", "value": "falconhui8@gmail.com", "href": "mailto:falconhui8@gmail.com" },
+      { "icon": "phone", "label": "Phone", "value": "0424790118", "href": "tel:+61424790118" },
+      { "icon": "linkedin", "label": "LinkedIn", "value": "linkedin.com/in/baron-z", "href": "https://www.linkedin.com/in/baron-z" }
     ],
     "resumeButtonText": "Download Resume"
   }
