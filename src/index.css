@@ -18,15 +18,7 @@
       radial-gradient(800px 400px at 90% 10%, rgba(29,78,216,0.12) 0%, transparent 60%),
       radial-gradient(600px 300px at 50% 120%, rgba(16,185,129,0.08) 0%, transparent 60%);
   }
-  .tech-bg:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
-    pointer-events: none;
-  }
+
 }
 
 @layer components {
