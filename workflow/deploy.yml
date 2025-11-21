@@ -1,26 +1,23 @@
-﻿name: Deploy Vite site to GitHub Pages
+﻿name: Auto Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master      # 你主分支是 master，就写 master
-  workflow_dispatch: # 手动触发按钮（GitHub Actions 页面上会有个 Run）
+      - auto-deploy    # 🚀 Trigger whenever you push to auto-deploy branch
+  workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout source code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -29,25 +26,19 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
-        # 如果你没有 package-lock.json，就改成：
-        # run: npm install
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: Upload build artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./dist   # Vite 默认打包目录
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
