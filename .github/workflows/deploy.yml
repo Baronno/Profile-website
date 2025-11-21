@@ -1,23 +1,27 @@
-﻿name: Auto Deploy to GitHub Pages
+﻿name: Deploy Vite site to GitHub Pages
 
 on:
   push:
     branches:
-      - auto-deploy
-  workflow_dispatch:
+      - auto-deploy      # 每次 push 到 auto-deploy 就自动部署
+  workflow_dispatch:      # 也可以在 Actions 页面手动点运行
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: Checkout source
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -33,12 +37,21 @@ jobs:
             npm install
           fi
 
-      - name: Build project
+      - name: Build Vite project
         run: npm run build
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload dist folder as Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./dist
+          path: ./dist     # Vite 打包输出目录
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
