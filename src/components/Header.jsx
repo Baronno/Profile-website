@@ -1,9 +1,11 @@
 import React from 'react'
 import content from '../content.json'
 import { getAvatarSrc } from '../utils/avatar'
+import personalAvatar from '../assets/personal-avatar.jpg'
 
 const Header = () => {
-  const avatarSrc = getAvatarSrc(content.header, 128)
+  // Prefer a directly imported avatar from `src/assets` when present (bundled by Vite).
+  const avatarSrc = personalAvatar || getAvatarSrc(content.header, 128)
 
   return (
     <div className="card">

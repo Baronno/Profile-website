@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import content from '../content.json'
 import { getAvatarSrc } from '../utils/avatar'
+import personalAvatar from '../assets/personal-avatar.jpg'
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -263,7 +264,7 @@ const Chatbot = () => {
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message) => {
               const isUser = message.sender === 'user'
-              const botAvatar = getAvatarSrc(content.header, 40)
+              const botAvatar = personalAvatar || getAvatarSrc(content.header, 40)
 
               return (
                 <div key={message.id} className={`flex ${isUser ? 'justify-end' : 'justify-start'} items-end`}> 
