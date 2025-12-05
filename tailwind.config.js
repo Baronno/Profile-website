@@ -23,6 +23,9 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      transitionDuration: {
+        '2000': '2000ms',
       }
     },
   },

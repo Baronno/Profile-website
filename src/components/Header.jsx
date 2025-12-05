@@ -8,25 +8,43 @@ const Header = () => {
   const avatarSrc = personalAvatar || getAvatarSrc(content.header, 128)
 
   return (
-    <div className="card">
-      <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
-        <div className="flex-shrink-0">
-          <img src={avatarSrc} alt={`${content.header.name} avatar`} className="w-32 h-32 rounded-full object-cover" />
-        </div>
-        <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.header.name}</h1>
-          <h2 className="text-xl text-primary-600 font-medium mb-4">{content.header.title}</h2>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-            {content.header.bio}
-          </p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {content.header.tags.map((tag, i) => (
-              <span key={i} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">{tag}</span>
-            ))}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4 py-20">
+      <div className="max-w-4xl w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
+          {/* Avatar */}
+          <div className="flex-shrink-0">
+            <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white">
+              <img src={avatarSrc} alt={`${content.header.name} avatar`} className="w-full h-full object-cover" />
+            </div>
           </div>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
-            <a className="btn-primary" href="#contact">Get in touch</a>
-            <a className="btn-secondary" href="#projects">View projects</a>
+
+          {/* Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="space-y-4 mb-8">
+              <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">{content.header.name}</h1>
+              <h2 className="text-2xl font-semibold text-blue-600">{content.header.title}</h2>
+            </div>
+
+            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-6">
+              {content.header.bio}
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+              {content.header.tags.map((tag, i) => (
+                <span key={i} className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-700 border border-blue-200">{tag}</span>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg">
+                Get in touch
+              </a>
+              <a href="#experience" className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-lg border border-slate-200 transition-colors duration-200 shadow-md">
+                View projects
+              </a>
+            </div>
           </div>
         </div>
       </div>
