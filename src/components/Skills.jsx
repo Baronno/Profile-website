@@ -43,16 +43,16 @@ const Skills = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="flex flex-col gap-4">
           {skillCategories.map((category, categoryIndex) => {
             let baseIndex = 0
             for (let i = 0; i < categoryIndex; i++) {
               baseIndex += skillCategories[i].skills.length
             }
             return (
-              <div key={categoryIndex} className="bg-white rounded-xl border border-slate-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">{category.title}</h3>
-                <div className="space-y-4">
+              <div key={categoryIndex} className="w-full bg-white rounded-xl border border-slate-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+                <h3 className="text-lg font-bold text-slate-900 mb-4 truncate">{category.title}</h3>
+                <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => {
                     const globalIndex = baseIndex + skillIndex
                     const isVisible = visibleIndexes.has(globalIndex)
@@ -65,9 +65,9 @@ const Skills = () => {
                         className={`transform transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
                         style={{ transitionDelay: `${delayMs}ms` }}
                       >
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-semibold text-slate-700">{skill.name}</span>
-                          <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">{skill.level}%</span>
+                        <div className="flex justify-between items-center mb-2 gap-2">
+                          <span className="text-sm font-semibold text-slate-700 truncate">{skill.name}</span>
+                          <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded flex-shrink-0">{skill.level}%</span>
                         </div>
                         <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
                           <div 

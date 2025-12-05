@@ -41,7 +41,7 @@ const Header = () => {
               <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg">
                 Get in touch
               </a>
-              <a href="#projects" className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-lg border border-slate-200 transition-colors duration-200 shadow-md">
+              <a href="#experience" className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-lg border border-slate-200 transition-colors duration-200 shadow-md">
                 View projects
               </a>
             </div>

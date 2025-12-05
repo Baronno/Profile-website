@@ -19,6 +19,13 @@
     "title": "Work Experience",
     "timeline": [
       {
+        "title": "Web Developer Intern",
+        "company": "Linda & Co",
+        "period": "Oct 2025 - Present",
+        "description": "In this role, I worked across the web stack to support the development of Linda & Co’s new e-commerce system. I implemented front-end updates to improve the site’s usability, wrote Python scripts that helped streamline internal workflows, and used AI-assisted PHP development to enhance their WordPress/WooCommerce inventory-sync plugin. My work improved the reliability of product data syncing and supported the team in delivering a smoother and more efficient online platform.",
+        "technologies": ["JavaScript", "WordPress/WooCommerce", "PHP", "Python", "AI-Assisted Development"]
+      },
+      {
         "title": "Full Stack Developer",
         "company": "Freelancer",
         "period": "June 2024 - Present",
@@ -38,13 +45,6 @@
         "period": "Feb 2021 - Aug 2021",
         "description": "Assisted with troubleshooting and optimizing database queries, improving application performance and reducing errors. Participated in sprint planning and agile development to ensure timely delivery of features.",
         "technologies": ["React", "JavaScript", "Database", "Agile", "Sprint Planning"]
-      },
-      {
-        "title": "IT Support Technician",
-        "company": "I Carry Network Café",
-        "period": "Jan 2021 - July 2021",
-        "description": "Installed and maintained PCs, software, and network hardware; provided user-friendly IT support. Gained practical troubleshooting experience for hardware/software issues, supporting user-facing systems. Delivered clear, customer-friendly technical support for login issues, software errors, and device problems.",
-        "technologies": ["Hardware", "Software", "Network", "Troubleshooting", "Customer Support"]
       }
     ],
     "projectsTitle": "Project Highlights",

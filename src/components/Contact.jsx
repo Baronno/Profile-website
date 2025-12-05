@@ -28,30 +28,27 @@ const Contact = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-3">
           {contactInfo.map((contact, index) => (
             <a
               key={index}
               href={contact.href}
-              className="group p-6 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-xl hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+              className="group p-3 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-lg hover:border-blue-400 hover:shadow-lg transition-all duration-300 overflow-hidden flex items-center gap-2"
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                  {contact.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">{contact.label}</p>
-                  <p className="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">{contact.value}</p>
-                </div>
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">{contact.icon}</svg>
+              </div>
+              <div className="flex-1 min-w-0 overflow-hidden">
+                <p className="text-xs font-semibold text-slate-900">{contact.label}: <span className="text-slate-700">{contact.value}</span></p>
               </div>
             </a>
           ))}
         </div>
 
         <div className="mt-12 pt-8 border-t border-slate-200">
-          <button className="w-full md:w-auto mx-auto block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg">
+          <a href="/Profile-website/assets/baron zhou - front end developer.pdf" download="baron zhou - front end developer.pdf" className="w-full md:w-auto mx-auto block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg text-center">
             {content.contact.resumeButtonText}
-          </button>
+          </a>
         </div>
       </div>
     </section>
