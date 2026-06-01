@@ -1,14 +1,15 @@
 import React from 'react'
 import content from '../content.json'
+import { getAvatarSrc } from '../utils/avatar'
 
 const Header = () => {
+  const avatarSrc = getAvatarSrc(content.header, 128)
+
   return (
     <div className="card">
       <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
         <div className="flex-shrink-0">
-          <div className="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white text-4xl font-bold">
-            {content.header.initials}
-          </div>
+          <img src={avatarSrc} alt={`${content.header.name} avatar`} className="w-32 h-32 rounded-full object-cover" />
         </div>
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.header.name}</h1>
