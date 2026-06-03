@@ -5,7 +5,12 @@
     "name": "Renhui Zhou",
     "title": "UI/UX Developer",
     "bio": "UI/UX developer with 3+ years of experience in React.js and Material UI, delivering modern, responsive, and user-focused web applications. Experienced in UI/UX design, component libraries, and agile team collaboration. Passionate about creating seamless user experiences and optimizing application performance.",
-    "tags": ["React", "JavaScript", "Material UI", "GraphQL"]
+    "tags": [
+      "React",
+      "JavaScript",
+      "Material UI",
+      "GraphQL"
+    ]
   },
   "about": {
     "title": "About Me",
@@ -19,32 +24,57 @@
     "title": "Work Experience",
     "timeline": [
       {
+        "title": "Web Developer",
+        "company": "Linda & Co",
+        "period": "Oct 2025 - Jan  2026",
+        "description": "Worked on the development and maintenance of an e-commerce platform. Implemented frontend improvements, developed Python automation scripts for internal workflows, and assisted with the enhancement of a WooCommerce inventory synchronization plugin using AI-assisted development tools. Contributed to improving data consistency and operational efficiency.",
+        "technologies": [
+          "JavaScript",
+          "PHP",
+          "WordPress",
+          "WooCommerce",
+          "REST API",
+          "Python"
+        ]
+      },
+      {
         "title": "Full Stack Developer",
         "company": "Freelancer",
         "period": "June 2024 - Present",
         "description": "Investigated and resolved issues reported by users, ensuring minimal downtime and smooth system performance. Delivered enhancements and new features based on client requests, demonstrating strong communication and problem-solving skills. Maintenance of back-end including back-end migration.",
-        "technologies": ["React", "JavaScript", "Material UI", "GraphQL", "Webpack"]
+        "technologies": [
+          "React",
+          "JavaScript",
+          "Material UI",
+          "GraphQL",
+          "Webpack"
+        ]
       },
       {
         "title": "Frontend Developer",
         "company": "Zerologix",
-        "period": "Aug 2021 - Nov 2023",
+        "period": "Aug 2021 - Sep 2023",
         "description": "Developed internal trading administration systems by troubleshooting user issues, maintaining dashboards, and ensuring stable system performance. Collaborated with cross-functional teams to resolve technical problems, implement upgrades, and deliver secure, reliable solutions. Built and maintained internal tools and component libraries, reducing repetitive work and supporting colleagues with consistent resources.",
-        "technologies": ["React", "Material UI", "JavaScript", "GraphQL", "Figma"]
+        "technologies": [
+          "React",
+          "Material UI",
+          "node.js",
+          "Git",
+          "Figma"
+        ]
       },
       {
         "title": "Full-stack Developer Intern",
         "company": "Velocity English",
         "period": "Feb 2021 - Aug 2021",
         "description": "Assisted with troubleshooting and optimizing database queries, improving application performance and reducing errors. Participated in sprint planning and agile development to ensure timely delivery of features.",
-        "technologies": ["React", "JavaScript", "Database", "Agile", "Sprint Planning"]
-      },
-      {
-        "title": "IT Support Technician",
-        "company": "I Carry Network Café",
-        "period": "Jan 2021 - July 2021",
-        "description": "Installed and maintained PCs, software, and network hardware; provided user-friendly IT support. Gained practical troubleshooting experience for hardware/software issues, supporting user-facing systems. Delivered clear, customer-friendly technical support for login issues, software errors, and device problems.",
-        "technologies": ["Hardware", "Software", "Network", "Troubleshooting", "Customer Support"]
+        "technologies": [
+          "React",
+          "JavaScript",
+          "Database",
+          "Agile",
+          "Sprint Planning"
+        ]
       }
     ],
     "projectsTitle": "Project Highlights",
@@ -52,19 +82,19 @@
       {
         "name": "Linda Jewellers",
         "href": "https://lindajewellers.com/",
-        "image": "https://picsum.photos/seed/jewellery/1600/900",
-        "tagline": "Luxury jewellery and timepieces - Latest freelance project"
+        "image": "/assets/Linda&Co.png",
+        "tagline": "Luxury jewellery and timepieces"
       },
       {
         "name": "Trading Cup",
         "href": "https://www.tradingcup.com/",
-        "image": "https://picsum.photos/seed/trading/1600/900",
-        "tagline": "Internal trading administration systems"
+        "image": "/assets/TradingCup.png",
+        "tagline": "Social trading platform for forex signals and copy trading."
       },
       {
         "name": "Velocity English",
         "href": "https://www.velocityenglish.com.au/",
-        "image": "https://picsum.photos/seed/english/1600/900",
+        "image": "/assets/Velocity.png",
         "tagline": "PTE/IELTS training and language coaching platform"
       }
     ]
@@ -75,31 +105,76 @@
       {
         "title": "Frontend",
         "skills": [
-          { "name": "React", "level": 95 },
-          { "name": "JavaScript", "level": 90 },
-          { "name": "Material UI", "level": 90 },
-          { "name": "Webpack", "level": 80 },
-          { "name": "Gatsby", "level": 75 }
+          {
+            "name": "React",
+            "level": 90
+          },
+          {
+            "name": "JavaScript",
+            "level": 90
+          },
+          {
+            "name": "Material UI",
+            "level": 90
+          },
+          {
+            "name": "Webpack",
+            "level": 80
+          },
+          {
+            "name": "Gatsby",
+            "level": 75
+          }
         ]
       },
       {
         "title": "Backend & APIs",
         "skills": [
-          { "name": "GraphQL", "level": 85 },
-          { "name": "RESTful APIs", "level": 90 },
-          { "name": "Database", "level": 80 },
-          { "name": "Backend Migration", "level": 75 },
-          { "name": "Agile Development", "level": 85 }
+          {
+            "name": "GraphQL",
+            "level": 85
+          },
+          {
+            "name": "RESTful APIs",
+            "level": 90
+          },
+          {
+            "name": "Database",
+            "level": 80
+          },
+          {
+            "name": "Backend Migration",
+            "level": 75
+          },
+          {
+            "name": "Agile Development",
+            "level": 85
+          }
         ]
       },
       {
         "title": "Tools & Design",
         "skills": [
-          { "name": "Git", "level": 90 },
-          { "name": "GitLab", "level": 85 },
-          { "name": "Figma", "level": 80 },
-          { "name": "UI/UX Design", "level": 85 },
-          { "name": "Component Libraries", "level": 90 }
+          {
+            "name": "Git",
+            "level": 90
+          },
+          {
+            "name": "GitLab",
+            "level": 85
+          },
+          {
+            "name": "Figma",
+            "level": 80
+          },
+          {
+            "name": "UI/UX Design",
+            "level": 85
+          },
+          {
+            "name": "Component Libraries",
+            "level": 90
+          }
         ]
       }
     ]
@@ -107,12 +182,25 @@
   "contact": {
     "title": "Contact",
     "items": [
-      { "icon": "email", "label": "Email", "value": "falconhui8@gmail.com", "href": "mailto:falconhui8@gmail.com" },
-      { "icon": "phone", "label": "Phone", "value": "0424790118", "href": "tel:+61424790118" },
-      { "icon": "linkedin", "label": "LinkedIn", "value": "linkedin.com/in/baron-z", "href": "https://www.linkedin.com/in/baron-z" }
+      {
+        "icon": "email",
+        "label": "Email",
+        "value": "falconhui8@gmail.com",
+        "href": "mailto:falconhui8@gmail.com"
+      },
+      {
+        "icon": "phone",
+        "label": "Phone",
+        "value": "0424790118",
+        "href": "tel:+61424790118"
+      },
+      {
+        "icon": "linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/baron-z",
+        "href": "https://www.linkedin.com/in/baron-z"
+      }
     ],
     "resumeButtonText": "Download Resume"
   }
 }
-
-
