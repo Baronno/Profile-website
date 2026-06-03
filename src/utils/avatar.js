@@ -1,5 +1,6 @@
-﻿export function generateInitialsAvatar(initials = 'U', size = 128, bg = null, fg = '#fff') {
-  // Deterministic background color from initials if none provided
+﻿import { resolvePublicPath } from './paths'
+
+function generateInitialsAvatar(initials = 'U', size = 128, bg = null, fg = '#fff') {
   const colors = ['#0ea5e9', '#7c3aed', '#ef4444', '#f97316', '#059669', '#db2777', '#0ea5e9']
   let bgColor = bg
   if (!bgColor) {
@@ -16,24 +17,12 @@
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
 }
 
-/**
- * Resolve an avatar source for the profile.
- * - If `content.header.avatar` is set and looks like a URL (`http://`, `https://`), data URL, or starts with `/`, return it as-is (public/ files should use `/path`).
- * - Otherwise fall back to a generated initials SVG data URL.
- *
- * Usage: put a file in `public/images/me.jpg` and set `content.header.avatar = "/images/me.jpg"`.
- */
 export function getAvatarSrc(contentHeader = {}, size = 128) {
   try {
     const avatar = contentHeader?.avatar
     if (avatar && typeof avatar === 'string') {
-      // Accept data URLs, absolute public paths, or http(s) URLs
-      if (/^data:|^https?:\/\//i.test(avatar) || avatar.startsWith('/')) {
-        return avatar
-      }
-
-      // If a relative path was provided (e.g. "images/me.jpg"), make it public-rooted
-      return avatar.startsWith('/') ? avatar : `/${avatar.replace(/^\/+/, '')}`
+      if (/^data:|^https?:\/\//i.test(avatar)) return avatar
+      return resolvePublicPath(avatar)
     }
   } catch (e) {
     // ignore and fallback

@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import content from '../content.json'
+import { resolvePublicPath } from '../utils/paths'
 
 const Experience = () => {
   const experiences = content.experience.timeline
@@ -10,7 +11,6 @@ const Experience = () => {
 
   // Fancy projects carousel
   const projects = useMemo(() => content.experience.projects, [])
-
   const [currentIndex, setCurrentIndex] = useState(0)
   const autoplayRef = useRef(null)
   const containerRef = useRef(null)
@@ -173,12 +173,11 @@ const Experience = () => {
               className="min-w-full block group"
             >
               <div className="relative h-56 xs:h-64 sm:h-80 md:h-96">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="h-full w-full object-cover"
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://picsum.photos/seed/fallback/1600/900' }}
+                <div
+                  className="h-full w-full bg-center bg-cover"
+                  style={{ backgroundImage: `url(${resolvePublicPath(project.image)})` }}
+                  role="img"
+                  aria-label={project.name}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8">
